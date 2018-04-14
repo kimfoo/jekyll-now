@@ -41,5 +41,7 @@ So, when we think about making Pong, we might think of several simple mechanics 
 18. Click on 'Background' property, in the color picker, choose the color black, with RGBA values of (0,0,0,0).
 
 ```C#
-var hi
+void Start () {
+    theBall = GameObject.FindGameObjectWithTag("Ball");
+}
 ```
