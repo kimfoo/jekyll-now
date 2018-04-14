@@ -41,8 +41,9 @@ Many 2D games use flat graphics, sometimes called sprites, which have no three-d
 Some 2D games use 3D geometry for the environment and characters, but restrict
 the gameplay to two dimensions. For example, the camera may show a “side scrolling view” and the player can only move in two dimensions, but game still uses 3D models for the obstacles and a 3D perspective for the camera. For these games, the 3D effect may serve a stylistic rather than functional purpose. This type of game is also sometimes referred to as “2.5D”. Although the gameplay is 2D, you will mostly be manipulating 3D models to build the game so you should start the editor in 3D mode.
 
-- For more info on 2.5D: [2.5D](https://www.giantbomb.com/25d/3015-660/)
-- Sprite Scaling: [ss](https://www.youtube.com/watch?v=9PMjuq-GO5c)
+Click here for more info:
+[2.5D](https://www.giantbomb.com/25d/3015-660/)
+[Sprite Scaling](https://www.youtube.com/watch?v=9PMjuq-GO5c)
 
 ![2D](https://static.giantbomb.com/uploads/original/0/30/1083239-shadowcomplex_screen14.jpg?raw=true)
 
@@ -60,10 +61,8 @@ Examples of parallax scrolling graphics:
 
 
 Other Resources:
-- 2D Game Level Creation
-  - http://ptgmedia.pearsoncmg.com/images/9780321957726/samplepages/9780321957726.pdf
-- Basic Unity Interface
-  - http://gardensandmachines.com/Gamedesign/01_IntroToUnityDev_Interface_CB.pdf
+- [2D Game Level Creation](http://ptgmedia.pearsoncmg.com/images/9780321957726/samplepages/9780321957726.pdf)
+- [Basic Unity Interface](http://gardensandmachines.com/Gamedesign/01_IntroToUnityDev_Interface_CB.pdf)
 
 
 
