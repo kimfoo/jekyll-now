@@ -42,8 +42,8 @@ Some 2D games use 3D geometry for the environment and characters, but restrict
 the gameplay to two dimensions. For example, the camera may show a “side scrolling view” and the player can only move in two dimensions, but game still uses 3D models for the obstacles and a 3D perspective for the camera. For these games, the 3D effect may serve a stylistic rather than functional purpose. This type of game is also sometimes referred to as “2.5D”. Although the gameplay is 2D, you will mostly be manipulating 3D models to build the game so you should start the editor in 3D mode.
 
 Click here for more info:
-[2.5D](https://www.giantbomb.com/25d/3015-660/)
-[Sprite Scaling](https://www.youtube.com/watch?v=9PMjuq-GO5c)
+- [2.5D](https://www.giantbomb.com/25d/3015-660/)
+- [Sprite Scaling](https://www.youtube.com/watch?v=9PMjuq-GO5c)
 
 ![2D](https://static.giantbomb.com/uploads/original/0/30/1083239-shadowcomplex_screen14.jpg?raw=true)
 
@@ -56,8 +56,8 @@ projection mode to Perspective and the scene view mode to 3D.
 ![2D2](https://github.com/kimfoo/unitygamedevelopment/blob/master/parscroll2.jpg?raw=true)
 
 Examples of parallax scrolling graphics:
-- https://github.com/iminyourhouse-turnaround
-- http://graphicnovel-hybrid4.peugeot.com/start.html
+- [Github 404](https://github.com/iminyourhouse-turnaround)
+- [Peugeot Graphic Novel](http://graphicnovel-hybrid4.peugeot.com/start.html)
 
 
 Other Resources:
