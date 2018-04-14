@@ -4,7 +4,7 @@ title: 2D Pong Game Creation
 permalink: /2D Pong Game Creation/
 ---
 
-# 2D Pong Game Creation
+
 
 Today, the name of the game is Pong. We’re going to be using Unity v5.6 or later, and we’ll use C# as our coding language. No prior experience with Unity or C# is required. It will only take you about two hours to complete the tutorial, and at the end you’ll have made your own version of Pong!
 
