@@ -1,3 +1,8 @@
+---
+layout: page
+title: 2D Pong Game Creation
+permalink: /2D Pong Game Creation/
+---
 
 # 2D Pong Game Creation
 
