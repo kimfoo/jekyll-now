@@ -39,4 +39,7 @@ So, when we think about making Pong, we might think of several simple mechanics 
 16. Select the Main Camera object in your Hierarchy pane. 
 17. Under 'Camera' component, change 'Size' to 3. 
 18. Click on 'Background' property, in the color picker, choose the color black, with RGBA values of (0,0,0,0).
-19. 
+
+```
+var hi
+```
