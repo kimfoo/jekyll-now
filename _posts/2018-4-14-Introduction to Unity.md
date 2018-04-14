@@ -1,4 +1,7 @@
-
+---
+layout: post
+title: Blogging Like a Hacker
+---
 # Introduction to Unity 
 
 Unity is a _cross-platform development platform_ initially created for developing games but is now used for a wide range of things such as: **architecture, art, children's apps, information management, education, entertainment, marketing, medical, military, physical installations, simulations, training**, and many more.
