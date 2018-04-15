@@ -402,9 +402,13 @@ public class SideWalls : MonoBehaviour {
         </p>
 
      
+## Bonus Last Step!!! (Optional)
 
+### Deployment to Microsoft Azure
 
+After completing your game, there is one last step which might be necessary depending on if you would like to share the game with others who do not have Unity installed on their laptop. Hosting your game on Microsoft Azure lets you do just that, minus the fuss of setting up a game server!
 
+Please browse this Microsoft Developer website for a step-by-step guide on hosting your Unity game on Microsoft Azure.
 
 
 
