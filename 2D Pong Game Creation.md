@@ -27,6 +27,9 @@ So, when we think about making Pong, we might think of several simple mechanics 
 ![newproject](https://www.awesomeincu.com/img/tutorials/unity-pong/new_project.png?raw=true)
 6. Once the project is created, you should see a 2D grid appear in the scene   view. If you don’t, make sure the ‘2D’ button is pressed along the top toolbar of Scene view. (You can see it highlighted in yellow in this image.)
 
+<p align="center">
+  <img width="460" height="300" src="https://www.awesomeincu.com/img/tutorials/unity-pong/2d_button.png?raw=true">
+</p>
 ![grid](https://www.awesomeincu.com/img/tutorials/unity-pong/2d_button.png?raw=true)
 
 7. Unzip Unity Pong Assets file. Click and drag all files into the project pane below your scene view.
