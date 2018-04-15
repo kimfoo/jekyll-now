@@ -26,8 +26,9 @@ So, when we think about making Pong, we might think of several simple mechanics 
 5. Hit 'Create Project'.
 ![newproject](https://www.awesomeincu.com/img/tutorials/unity-pong/new_project.png?raw=true)
 6. Once the project is created, you should see a 2D grid appear in the scene   view. If you don’t, make sure the ‘2D’ button is pressed along the top toolbar of Scene view. (You can see it highlighted in yellow in this image.)
-![grid]
+![grid](https://www.awesomeincu.com/img/tutorials/unity-pong/2d_button.png?raw=true)
 7. Unzip Unity Pong Assets file. Click and drag all files into the project pane below your scene view.
+![assets](https://www.awesomeincu.com/img/tutorials/unity-pong/unitypong-assets.png?raw=true)
 8. Drag the background image 'Background.jpg' to the hierarchy pane, just below the main camera.
 9. If image is not centered, change Transform Position to (0,0,0).
 10. Select 'Background', and you should see the Inspector Pane.
