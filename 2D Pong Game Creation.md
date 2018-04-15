@@ -198,7 +198,6 @@ void Update () {
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class BallControl : MonoBehaviour {
 ```
 2. Declare these variables.
@@ -265,6 +264,155 @@ void OnCollisionEnter2D (Collision2D coll) {
 * LeftWall: Position(-5.8, 0, 0)  ,  Scale(1, 6, 1)
 * TopWall: Position(0, 3.5, 0)  ,  Scale(10.7, 1, 1)
 * BottomWall: Position(0, -3.5, 0)  ,  Scale(10.7, 1, 1)
+
+    <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/walls_sceneview.png?raw=true">
+        </p>
+        
+5. Now hit play (►), and the ball will bounce off the walls!
+
+
+## Step 5 : The Scoring User Interface
+
+1. First things first, we need a game object for our HUD (or Heads-Up Display). Right click an empty space in the Hierarchy pane and choose ‘Create Empty’. 
+2. Call the new object ‘HUD’, center its position at (0, 0, 0), and add a new script to the HUD object called ‘GameManager’.
+
+### Code Breakdown
+
+1. First, as always, we import our packages and declare our class.
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class GameManager : MonoBehaviour {
+```
+2. Next, we make 4 variables.
+```cs
+public static int PlayerScore1 = 0;
+public static int PlayerScore2 = 0;
+public GUISkin layout;
+GameObject theBall;
+```
+3. Then comes the Start() function, which we use when the game first starts.
+```cs
+void Start () {
+    theBall = GameObject.FindGameObjectWithTag("Ball");
+}
+```
+4. Next is the Score() function. It will get called by another script we write in just a minute, that detects when the ball hits the side walls.
+```cs
+public static void Score (string wallID) {
+    if (wallID == "RightWall")
+    {
+        PlayerScore1++;
+    } else
+    {
+        PlayerScore2++;
+    }
+}
+```
+5. The OnGUI() function takes care of displaying the score and the reset button functionality. Then, it checks every time something happens if someone has won yet, and triggers the function ResetBall() if someone has.
+```cs
+void OnGUI () {
+    GUI.skin = layout;
+    GUI.Label(new Rect(Screen.width / 2 - 150 - 12, 20, 100, 100), "" + PlayerScore1);
+    GUI.Label(new Rect(Screen.width / 2 + 150 + 12, 20, 100, 100), "" + PlayerScore2);
+
+    if (GUI.Button(new Rect(Screen.width / 2 - 60, 35, 120, 53), "RESTART"))
+    {
+        PlayerScore1 = 0;
+        PlayerScore2 = 0;
+        theBall.SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
+    }
+
+    if (PlayerScore1 == 10)
+    {
+        GUI.Label(new Rect(Screen.width / 2 - 150, 200, 2000, 1000), "PLAYER ONE WINS");
+        theBall.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
+    } else if (PlayerScore2 == 10)
+    {
+        GUI.Label(new Rect(Screen.width / 2 - 150, 200, 2000, 1000), "PLAYER TWO WINS");
+        theBall.SendMessage("ResetBall", null, SendMessageOptions.RequireReceiver);
+    }
+}
+```
+6. In your Project pane, right click and create a GUI Skin called ‘ScoreSkin’.
+7. Click on that Skin, and you should see a variable field called ‘Font’ at the top of the Inspector pane. Click + drag our font to that variable slot.
+
+    <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/score_skin.png?raw=true">
+        </p>
+8. If you scroll down and look under the dropdown menus for ‘Label’ and ‘Button’ you can also change the size of your text, etc. Play around with size until it looks good.
+9.  In the end, your HUD’s Game Manager (Script) should look like this:
+
+   <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/game_manager_layout.png?raw=true">
+        </p>
+
+10. Now, when you play, you should see something like this:
+
+    <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/gui_font_enabled.png?raw=true">
+        </p>
+        
+11. Now let’s make sure that the game knows when we do score. To do that, we need to add a script to the ‘LeftWall’ and ‘RightWall’ objects under the HUD dropdown. Go to ‘Add Component’ on the LeftWall, and name this new script ‘SideWalls.cs’.
+
+### Code Breakdown
+
+1. We will now write a function that detects when something is colliding with our left or right walls. If it’s the ball, we call the score method in GameManager, and reset the ball to the middle. Add this script to LeftWall.
+```cs
+using UnityEngine;
+using System.Collections;
+public class SideWalls : MonoBehaviour {
+    void OnTriggerEnter2D (Collider2D hitInfo) {
+        if (hitInfo.name == "Ball")
+        {
+            string wallName = transform.name;
+            GameManager.Score(wallName);
+            hitInfo.gameObject.SendMessage("RestartGame", 1.0f, SendMessageOptions.RequireReceiver);
+        }
+    }
+}
+```
+2. Go to ‘Add Component’ on ‘RightWall’ and choose just ‘Script’ instead of ‘New Script.’ Choose the Script we just wrote.
+3. Now, in order for Unity to call our OnTriggerEnter2D method, we have to make sure both the LeftWall and RightWall have the “Is Trigger” checkbox selected on their Box Colliders in the Inspector pane. 
+ 
+     <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/istrigger.png?raw=true">
+        </p>
+
+4. Test your game to make sure both players can score a point. We're almost done!
+
+## Last Step : Make The Game
+
+1. Go to File at the top of Unity. Go to ‘Build Settings’ and then choose ‘Mac, PC, Linux Standalone.’ This will make an executable (playable) file appear on our desktop. You may need to ‘Add Open Scenes’, to ensure that Main is included in the build.
+2. Now, click on ‘Player Settings.’ This is where you should put your name on the Project, choose an icon (Ball Sprite etc.), and uncheck ‘Default Is Full Screen’.
+3. Set 960x540 as default screen width and height.
+4. In the ‘Supported Aspect Ratios’ list, click the little arrow and uncheck everything except 16:10 and 16:9. If we choose a different aspect ratio, it’s possible we might not see our paddles. Your settings in the end should look like this:
+
+    <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/player_settings.png?raw=true">
+        </p>
+5. Hit Build and choose where you want to save the file, and name it Pong v1.0. 
+
+#### Congratulations! Enjoy the game :)
+    
+  <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/finished_pong_game.png?raw=true">
+        </p>
+
+     
+
+
+
+
+
+
+
+
+
+
+
 
 
 
