@@ -20,18 +20,18 @@ So, when we think about making Pong, we might think of several simple mechanics 
 ## Step 1 : The Setup
 
 1. From the welcome screen, click ‘Projects’. (If the Unity editor is already open, click ‘File’ > ‘New Project’ instead.) 
-2. Name the project something like 'Pong Game'.
-3. Choose '2D'
-4. Set the 'Enable Unity Analytics' to off.
-5. Hit 'Create Project'.
+..2. Name the project something like 'Pong Game'.
+..3. Choose '2D'
+..4. Set the 'Enable Unity Analytics' to off.
+..5. Hit 'Create Project'.
 ![newproject](https://www.awesomeincu.com/img/tutorials/unity-pong/new_project.png?raw=true)
-6. Once the project is created, you should see a 2D grid appear in the scene   view. If you don’t, make sure the ‘2D’ button is pressed along the top toolbar of Scene view. (You can see it highlighted in yellow in this image.)
+..6. Once the project is created, you should see a 2D grid appear in the scene   view. If you don’t, make sure the ‘2D’ button is pressed along the top toolbar of Scene view. (You can see it highlighted in yellow in this image.)
 
 <p align="center">
   <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/2d_button.png?raw=true">
 </p>
 
-7. Unzip Unity Pong Assets file. Click and drag all files into the project pane below your scene view.
+..7. Unzip Unity Pong Assets file. Click and drag all files into the project pane below your scene view.
 
 <p align="center">
   <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/unitypong-assets.png?raw=true">
@@ -50,12 +50,12 @@ So, when we think about making Pong, we might think of several simple mechanics 
 9. If image is not centered, change Transform Position to (0,0,0).
 10. Select 'Background', and you should see the Inspector Pane.
 11. Under Transform, change the scale to (0.75,0.75,1).
+12. Go to 'Sprite Renderer'> 'Sorting Layer'> click 'Add Sorting Layer'.
 
 <p align="center">
   <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/sorting_layer.png?raw=true">
 </p>
 
-12. Go to 'Sprite Renderer'> 'Sorting Layer'> click 'Add Sorting Layer'.
 13. Click the + icon to add our new layer. Change its name from ‘New Layer’ to ‘Background’, then click and drag our new layer above the Default layer.
 14. Re-select your Background object in the Hierarchy pane so that it will show up in the Inspector again. 
 15. In 'Sprite Renderer'> Sorting Layer> choose 'Background Layer'
@@ -77,3 +77,7 @@ So, when we think about making Pong, we might think of several simple mechanics 
 <p align="center">
   <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/saved_scene_main.png?raw=true">
 </p>
+
+## Step 2 : The Paddles
+
+
