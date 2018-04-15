@@ -408,7 +408,7 @@ public class SideWalls : MonoBehaviour {
 
 After completing your game, there is one last step which might be necessary depending on if you would like to share the game with others who do not have Unity installed on their laptop. Hosting your game on Microsoft Azure lets you do just that, minus the fuss of setting up a game server!
 
-Please browse this Microsoft Developer website for a step-by-step guide on hosting your Unity game on Microsoft Azure.
+Please browse this [Microsoft Developer website](https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/10/09/hosting-your-unity-game-on-azure/) for a step-by-step guide on hosting your Unity game on Microsoft Azure.
 
 
 
