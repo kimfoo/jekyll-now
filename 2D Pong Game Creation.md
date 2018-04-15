@@ -21,17 +21,17 @@ So, when we think about making Pong, we might think of several simple mechanics 
 
 1. From the welcome screen, click ‘Projects’. (If the Unity editor is already open, click ‘File’ > ‘New Project’ instead.) 
 2. Name the project something like 'Pong Game'.
-··3. Choose '2D'
-··4. Set the 'Enable Unity Analytics' to off.
-··5. Hit 'Create Project'.
+3. Choose '2D'
+4. Set the 'Enable Unity Analytics' to off.
+5. Hit 'Create Project'.
 ![newproject](https://www.awesomeincu.com/img/tutorials/unity-pong/new_project.png?raw=true)
-··6. Once the project is created, you should see a 2D grid appear in the scene   view. If you don’t, make sure the ‘2D’ button is pressed along the top toolbar of Scene view. (You can see it highlighted in yellow in this image.)
+6. Once the project is created, you should see a 2D grid appear in the scene   view. If you don’t, make sure the ‘2D’ button is pressed along the top toolbar of Scene view. (You can see it highlighted in yellow in this image.)
 
-<p align="center">
-  <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/2d_button.png?raw=true">
-</p>
+    <p align="center">
+      <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/2d_button.png?raw=true">
+    </p>
 
-··7. Unzip Unity Pong Assets file. Click and drag all files into the project pane below your scene view.
+7. Unzip Unity Pong Assets file. Click and drag all files into the project pane below your scene view.
 
 <p align="center">
   <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/unitypong-assets.png?raw=true">
