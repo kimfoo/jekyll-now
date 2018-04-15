@@ -50,17 +50,30 @@ So, when we think about making Pong, we might think of several simple mechanics 
 9. If image is not centered, change Transform Position to (0,0,0).
 10. Select 'Background', and you should see the Inspector Pane.
 11. Under Transform, change the scale to (0.75,0.75,1).
+
+<p align="center">
+  <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/sorting_layer.png?raw=true">
+</p>
+
 12. Go to 'Sprite Renderer'> 'Sorting Layer'> click 'Add Sorting Layer'.
 13. Click the + icon to add our new layer. Change its name from ‘New Layer’ to ‘Background’, then click and drag our new layer above the Default layer.
 14. Re-select your Background object in the Hierarchy pane so that it will show up in the Inspector again. 
 15. In 'Sprite Renderer'> Sorting Layer> choose 'Background Layer'
 
+<p align="center">
+  <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/background_sorting_layer.png?raw=true">
+</p>
+
 16. Select the Main Camera object in your Hierarchy pane. 
 17. Under 'Camera' component, change 'Size' to 3. 
-18. Click on 'Background' property, in the color picker, choose the color black, with RGBA values of (0,0,0,0).
+18. Click on 'Background' property, in the color picker, choose the color black, with RGBA values of (0,0,0,0). The camera component should look like this:
 
-```C#
-void Start () {
-    theBall = GameObject.FindGameObjectWithTag("Ball");
-}
-```
+<p align="center">
+  <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/main_camera_inspector.png?raw=true">
+</p>
+
+19. Now it is time to save your scene. Go to File -> Save Scene As… 'Main" in your Assets folder. Once you save, you should see a file called Main.unity from your Project pane.
+
+<p align="center">
+  <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/saved_scene_main.png?raw=true">
+</p>
