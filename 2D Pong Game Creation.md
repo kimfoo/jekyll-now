@@ -173,4 +173,104 @@ void Update () {
 
 ## Step 3 : The Ball
 
+1. Find the Ball image in the Project pane. Drag the Ball into the Scene, same as our Paddles. There should now be an object in the Hierarchy pane named ‘Ball’. Click on it, then head over to the Inspector pane to get the ball rolling. 
+2. First, add a custom Tag called “Ball”, then go back and assign this new tag to our Ball. (This process is just like when you added a Sorting Layer to your background, except you click ‘Add Tag’ instead of ‘Add Sorting Layer’.)
+
+     <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/assign_ball_tag.png?raw=true">
+        </p>
+
+3. Next, change the scale of our ball to (0.5, 0.5, 1). 
+4. Click the Add Component button, then in Physics 2D, let’s add ‘Circle Collider 2D’ and of course ‘Rigidbody 2D.’ In the Circle Collider, change the Radius to 0.23. 
+5. Now we are going to apply a Physics 2D Material. To apply the material, select ‘Ball’ in the inspector. Drag ‘BallBounce’ to the ‘Circle Collider 2D’ box. We also need to adjust several settings in ‘Rigidbody 2D’ so we can get our desired pong ball behavior. It should look like this at the end:
+
+     <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/ball_inspector_physics.png?raw=true">
+        </p>
+        
+6. With ‘Ball’ still selected in your Hierarchy, click Add Component in the Inspector pane. Create a New Script, this time called ‘BallControl’, with the C Sharp language selected. 
+7. Double click on the new BallControl script to open it in MonoDevelop. 
+
+### Code Breakdown
+
+1. First, as always, we import our packages and confirm that our class name matches our filename.
+```cs
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BallControl : MonoBehaviour {
+```
+2. Declare these variables.
+```cs
+private Rigidbody2D rb2d;
+private Vector2 vel;
+```
+3. We also need a GoBall() function, that will choose a random direction (left or right), then make the ball start to move.
+```cs
+void GoBall(){
+    float rand = Random.Range(0, 2);
+    if(rand < 1){
+        rb2d.AddForce(new Vector2(20, -15));
+    } else {
+        rb2d.AddForce(new Vector2(-20, -15));
+    }
+}
+```
+4. In our Start() function, we’ll initialize our rb2d variable. Then we’ll call the GoBall() function, using Invoke(), which allows us to wait before execution. This will wait two seconds to give players time to get ready before the ball starts moving.
+```cs
+void Start () {
+    rb2d = GetComponent<Rigidbody2D>();
+    Invoke("GoBall", 2);
+}
+```
+5. ResetBall() and ResartGame() are two functions used by other scripts which we will write later. ResetBall() is used when a win condition is met. It stops the ball, and resets its position to the center of the board.
+```cs
+void ResetBall(){
+    vel = Vector2.zero;
+    rb2d.velocity = vel;
+    transform.position = Vector2.zero;
+}
+```
+6. RestartGame() is used when our restart button is pushed. We’ll add that button later. This function uses ResetBall() to center the ball on the board. Then it uses Invoke() to wait 1 second, then start the ball moving again.
+```cs
+void RestartGame(){
+    ResetBall();
+    Invoke("GoBall", 1);
+}
+```
+7. OnCollisionEnter2D() waits until we collide with a paddle, then adjusts the velocity appropriately using both the speed of the ball and of the paddle.
+```cs
+void OnCollisionEnter2D (Collision2D coll) {
+    if(coll.collider.CompareTag("Player")){
+        vel.x = rb2d.velocity.x;
+        vel.y = (rb2d.velocity.y / 2.0f) + (coll.collider.attachedRigidbody.velocity.y / 3.0f);
+        rb2d.velocity = vel;
+    }
+}
+```
+
+## Step 4 : The Walls
+
+1. Make sure nothing is selected in the Hierarchy pane, then right click some empty space in the Hierarchy and choose ‘Create Empty’. Also, make sure that it has a position of (0,0,0).
+2. In the Hierarchy pane, right click on the ‘Walls’ object we just made and choose ‘Create Empty’. This will make a new game object that is a ‘child’ of the Walls object. Call this new child object ‘RightWall.’ 
+3. Go to ‘AddComponent’ and add a Box Collider 2D.
+
+    <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/rightwall.png?raw=true">
+        </p>
+
+4. Duplicate our new wall object 3 times. Call those duplicates ‘LeftWall’, ‘TopWall’, and ‘BottomWall’.
+* RightWall: Position(5.8, 0, 0)  ,  Scale(1, 6, 1)
+* LeftWall: Position(-5.8, 0, 0)  ,  Scale(1, 6, 1)
+* TopWall: Position(0, 3.5, 0)  ,  Scale(10.7, 1, 1)
+* BottomWall: Position(0, -3.5, 0)  ,  Scale(10.7, 1, 1)
+
+
+
+
+
+
+
+
 
