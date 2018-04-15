@@ -30,13 +30,23 @@ So, when we think about making Pong, we might think of several simple mechanics 
 <p align="center">
   <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/2d_button.png?raw=true">
 </p>
-![grid](https://www.awesomeincu.com/img/tutorials/unity-pong/2d_button.png?raw=true)
 
 7. Unzip Unity Pong Assets file. Click and drag all files into the project pane below your scene view.
 
-![assets](https://www.awesomeincu.com/img/tutorials/unity-pong/unitypong-assets.png?raw=true)
+<p align="center">
+  <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/unitypong-assets.png?raw=true">
+</p>
+
+<p align="center">
+  <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/background_project_pane.png">
+</p>
 
 8. Drag the background image 'Background.jpg' to the hierarchy pane, just below the main camera.
+
+<p align="center">
+  <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/background_hierarchy_pane.png">
+</p>
+
 9. If image is not centered, change Transform Position to (0,0,0).
 10. Select 'Background', and you should see the Inspector Pane.
 11. Under Transform, change the scale to (0.75,0.75,1).
