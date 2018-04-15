@@ -107,7 +107,7 @@ So, when we think about making Pong, we might think of several simple mechanics 
 ### Code Breakdown
 
 1. The first three lines are packages of pre-written code we want to tell our program it can use.
-```
+```C#
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
