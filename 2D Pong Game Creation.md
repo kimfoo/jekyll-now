@@ -107,11 +107,27 @@ So, when we think about making Pong, we might think of several simple mechanics 
 ### Code Breakdown
 
 1. The first three lines are packages of pre-written code we want to tell our program it can use.
-```C#
+```cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 ```
+
+2. The next line is the class name, the name of our file. It’s the same thing that we named our Component.
+```C#
+public class PlayerControls : MonoBehaviour {
+```
+
+3. The next few lines are variables we need to write ourselves. The first two lines we add will denote the keys that we’ll press to move the paddles (W goes up, S goes down), and the next one is the speed of the paddle. The ‘boundY’ variable is the highest position that we want our paddle to go. This keeps it from moving off the edges of the screen. The last variable is a reference to our Rigidbody that we’ll use later.
+```C#
+public KeyCode moveUp = KeyCode.W;
+public KeyCode moveDown = KeyCode.S;
+public float speed = 10.0f;
+public float boundY = 2.25f;
+private Rigidbody2D rb2d;
+```
+
+4. By making these variables ‘public,’ we can adjust them through our Unity interface as well. If we have variables we don’t want other developers to see in the Unity interface, we should call them ‘private’.
 
 
 
