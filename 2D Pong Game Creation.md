@@ -131,7 +131,46 @@ void Start () {
     rb2d = GetComponent<Rigidbody2D>();
 }
 ```
+5. Update() is a function that is called once per frame. We’ll use it to tell us what button is being pressed, and then move the paddle accordingly, or, if no button is pressed, keep the paddle still. Lastly we’ll bound the paddle vertically between +boundY and -boundY, which will keep it inside the game screen at all times.
+```cs
+void Update () {
+    var vel = rb2d.velocity;
+    if (Input.GetKey(moveUp)) {
+        vel.y = speed;
+    }
+    else if (Input.GetKey(moveDown)) {
+        vel.y = -speed;
+    }
+    else if (!Input.anyKey) {
+        vel.y = 0;
+    }
+    rb2d.velocity = vel;
 
+    var pos = transform.position;
+    if (pos.y > boundY) {
+        pos.y = boundY;
+    }
+    else if (pos.y < -boundY) {
+        pos.y = -boundY;
+    }
+    transform.position = pos;
+}
+```
+6. Save and exit.
+7. To test our game, click the play button (►) at the top of the screen. Use the W and S keys to move. Does it work? Awesome!
 
+    <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/playmode.png?raw=true">
+        </p>
+        
+8. Try clicking the Player01 object in the Hierarchy and changing the position of the paddle in the Inspector while the game is running in Play Mode. This is super handy for trying out new ideas in real time. Warning: *The changes you make during Play Mode do not stay when you close Play Mode.*
+9. The next step is to make a second paddle. All we need to do is right click ‘Player01’ in the Hierarchy menu, and choose Duplicate from the menu that appears when we right click. Rename it to be ‘Player02’.
+10. Next, change its key bindings (recommend using ‘Up Arrow’ for up and ‘Down Arrow’ for down), and move it to be the opposite location on the board - change the X value in its Transform Position to be positive. Player01 should be on the left, Player02 on the right. Now go to ‘Game’ and test this one too. 
+
+    <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/image_12.png?raw=true">
+        </p>
+
+## Step 3 : The Ball
 
 
