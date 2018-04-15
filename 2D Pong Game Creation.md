@@ -80,4 +80,40 @@ So, when we think about making Pong, we might think of several simple mechanics 
 
 ## Step 2 : The Paddles
 
+1. Find the image called ‘PongPaddle’ in the Assests folder, within your Project pane.
+2. Now drag the paddle onto the scene in scene view. A ‘Player’ object should appear in your Hierarchy menu. Rename that to Player01. Click on it.
+3. Over in the Inspector, click the Tag dropdown and select ‘Player’. Set Position to (X, Y, Z) = (-4, 0, 0) and Scale to (0.5, 1.5, 1). It should look like this in the Inspector:
+
+       <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/inspector_4.png?raw=true">
+        </p>
+        
+4. Next we’re going to add two components to the Player object. Click on the ‘Add Component’ button, and then on ‘Physics 2D.’ 
+5. Once you’ve done that add both a ‘Box Collider 2D’ and a ‘Rigidbody 2D.’ The Box Collider 2D is to make sure the ball will bounce off your paddle, and the Rigidbody 2D is there so we can move the paddle around. Note: It’s important to use Physics, BoxCollider, and RigidBody 2D here because 3D versions of those exist - that’s not what we want in our 2D game though.
+6. Click the ‘Body Type’ dropdown menu and select ‘Kinematic’. Your Inspector should now look like this:
+
+      <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/player01_physics.png?raw=true">
+        </p>
+       
+7. Now we are going to add a Script for movement for our paddles. Make sure that Player01 is still selected in your Hierarchy pane, then go to ‘Add Component’, and then ‘New Script.’
+8. Call this one ‘PlayerControls’ and make sure the language is C# (or CSharp, as it is spelled out in Unity). Hit ‘Create and Add’.
+9. Double click the icon that appears below in the Project pane to open it up in MonoDevelop, Unity’s Integrated Development Environment (or IDE) - essentially, it’s the program we use to write Unity scripts.
+
+      <p align="center">
+          <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/image_6.png?raw=true">
+        </p>
+
+### Code Breakdown
+
+1. The first three lines are packages of pre-written code we want to tell our program it can use.
+```
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+```
+
+
+
+
 
