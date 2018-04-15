@@ -84,10 +84,10 @@ So, when we think about making Pong, we might think of several simple mechanics 
 2. Now drag the paddle onto the scene in scene view. A ‘Player’ object should appear in your Hierarchy menu. Rename that to Player01. Click on it.
 3. Over in the Inspector, click the Tag dropdown and select ‘Player’. Set Position to (X, Y, Z) = (-4, 0, 0) and Scale to (0.5, 1.5, 1). It should look like this in the Inspector:
 
-       <p align="center">
+     <p align="center">
           <img src="https://www.awesomeincu.com/img/tutorials/unity-pong/inspector_4.png?raw=true">
         </p>
-        
+       
 4. Next we’re going to add two components to the Player object. Click on the ‘Add Component’ button, and then on ‘Physics 2D.’ 
 5. Once you’ve done that add both a ‘Box Collider 2D’ and a ‘Rigidbody 2D.’ The Box Collider 2D is to make sure the ball will bounce off your paddle, and the Rigidbody 2D is there so we can move the paddle around. Note: It’s important to use Physics, BoxCollider, and RigidBody 2D here because 3D versions of those exist - that’s not what we want in our 2D game though.
 6. Click the ‘Body Type’ dropdown menu and select ‘Kinematic’. Your Inspector should now look like this:
