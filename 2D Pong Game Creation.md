@@ -410,7 +410,7 @@ After completing your game, there is one last step which might be necessary depe
 
 Please browse this [Microsoft Developer website](https://blogs.msdn.microsoft.com/uk_faculty_connection/2017/10/09/hosting-your-unity-game-on-azure/) for a step-by-step guide on hosting your Unity game on Microsoft Azure. Set up your Microsoft Azure account, make sure you have Microsoft Visual Studio 2017 installed, and you are ready to go.
 
-*Remark: Please take note that this guide was made with Microsoft Visual Studio 2015. There are some minor differences in the interface, which means that you will not be able to select "New Website" in File. Instead, go to **File > Open > Website and select the folder in which your Unity WebGL version of your game is located. Then, proceed to continue at Step 9 onwards of the step-by-step guide.*
+*Remark: Please take note that this guide was made with Microsoft Visual Studio 2015. There are some minor differences in the interface, which means that you will not be able to select "New Website" in File. Instead, go to **File > Open > Website and select the folder in which your Unity WebGL version of your game is located. Then, proceed to continue at Step 9 onwards of the step-by-step guide.**
 
 
 
